@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+
+}
+
+section {
+    min-height: 24vh;
+}
+
+
+section .container {
+    padding-top: 0px;
+}
+
+
+
+section h2 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section .text-container {
+    display: flex;
+}
+
+section .text-container .text-box {
+    margin-top: 0px;
+    margin: 20px;
+    padding: 20px;
+
+}
+
+section .text-container .text-box img {
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+
+    section .text-container {
+        flex-direction: column;
+    }
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+
+.everything {
+    color: #FFE84E;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-decoration: wavy;
+}
+
+.citation {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: Impact;
+    font-style: italic;
+
+}
+
+/* ------------------------------*/
+
+section .slidein {
+    padding-top: 0px;
+}
+
+
+section .slidein-container {
+    display: flex;
+}
+
+section .slidein-container .slidein-box {
+    margin-top: 0px;
+
+}
+
+section .slidein-container .slidein-box p {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: Bahnschrift SemiBold;
+}
+
+@media (max-width: 900px) {
+    section .slidein-container {
+        flex-direction: column;
+    }
+}
+
+.slidein {
+    position: relative;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.slidein.slider {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+
+/* --könyvek animációja-- */
+
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&family=Stint+Ultra+Expanded&display=swap');
+
+:root {
+    --perspective: 1000px;
+    --link-color: #010790;
+}
+
+
+/* 
+a {
+    color: var(--link-color);
+    font-weight: bold;
+} */
+
+
+.book {
+    position: relative;
+    width: 320px;
+    height: 453px;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.gloss {
+    position: absolute;
+    top: 0;
+    z-index: 200;
+    overflow: hidden;
+    width: 20%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    transition: all .5s;
+    transform: translateX(-50%) rotateY(0deg);
+    transform-origin: left center;
+}
+
+.cover {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    z-index: 100;
+    transition: transform .5s;
+    transform: translateX(0);
+    transform-origin: left center;
+    backface-visibility: hidden;
+    display: flex;
+    border-radius: 10px;
+}
+
+.description {
+    position: absolute;
+    display: inline;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    border: solid 1px grey;
+    background: white;
+    transition: all 1s;
+    padding: 10% 10%;
+    padding-top: 5%;
+    z-index: 1;
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: calc(0.65em + .05vw);
+    overflow-wrap: break-word;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.description p {
+    padding-bottom: 50%;
+}
+
+.description h1 {
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.25em;
+}
+
+.book:hover {
+    cursor: pointer;
+}
+
+.book:hover .cover {
+    transform: perspective(var(--perspective)) rotateY(-80deg);
+}
+
+.book:hover .gloss {
+    transform: perspective(var(--perspective)) rotateY(-80deg) translateX(100%) scaleX(5);
+}
+
+.book:hover .description {
+    transform: translateX(20%);
+}
+
+.konyvcimek {
+    font-family: Trebuchet MS;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: -4rem;
+}
+
+.selfimprove {
+    font-family: Rockwell;
+    text-align: center;
+}
+
+
+
+/* ---PACKAGE ANIMATIONS--- */
+
+:root {
+    --background-dark: #2d3548;
+    --text-light: rgba(255, 255, 255, 0.6);
+    --text-lighter: rgba(255, 255, 255, 0.9);
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 64px;
+    --width-container: 1200px;
+}
+
+
+.hero-section {
+    align-items: flex-start;
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: var(--spacing-l);
+    grid-row-gap: var(--spacing-l);
+    max-width: var(--width-container);
+    width: 100%;
+}
+
+@media(min-width: 540px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 960px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    list-style: none;
+    position: relative;
+    border-radius: 25px;
+}
+
+.card:before {
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.card__background {
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--spacing-l);
+    bottom: 0;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition:
+        filter 200ms linear,
+        transform 200ms linear;
+}
+
+.card:hover .card__background {
+    transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover>.card:not(:hover) .card__background {
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content {
+    left: 0;
+    padding: var(--spacing-l);
+    position: absolute;
+    top: 0;
+}
+
+.card__category {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-s);
+    text-transform: uppercase;
+}
+
+.card__heading {
+    color: var(--text-lighter);
+    font-size: 0.7rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    line-height: 1.4;
+    word-spacing: 100vw;
+}
+
+@import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+
+.seller {
+
+    font-family: Impact;
+    font-size: 45px;
+    letter-spacing: 10px;
+    stroke: #d2ff70;
+    font-weight: 400;
+    stroke-width: 0.8;
+
+    animation: textAnimate 2s infinite alternate;
+
+
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: hsl(0, 0%, 100%)
+    }
+
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffstet: -20%;
+        fill: hsl(0, 0%, 65%)
+    }
+
+}
+
+/* --SOCIAL MEDIA ANIMÁCIÓ-- */
+
+
+
+
+.socialmedia {
+    list-style: none;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socialmedia .social {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 160px;
+    height: 160px;
+}
+
+.social .base {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--clr);
+    border-left: 5px solid transparent;
+    animation: spin 5s linear infinite;
+    filter: drop-shadow(0 0 4px var(--clr));
+}
+
+.social .base::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--clr);
+}
+
+.social .base,
+.social .title,
+.social .icon {
+    position: absolute;
+    color: #b5b5b5;
+    transform: rotateX(60deg) rotateZ(-45deg);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.social .title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transform: rotateY(30deg) skewY(-24deg) translateY(0px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.social .icon {
+    display: grid;
+    place-items: center;
+    font-size: 80px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.base:hover {
+    filter: drop-shadow(0 0 4px var(--clr));
+    animation-play-state: paused;
+}
+
+.base:hover+.title+.icon {
+    transform: rotateY(30deg) skewY(-24deg) translateY(-160px);
+    color: var(--clr);
+    filter: drop-shadow(0 0 3px var(--clr));
+    animation: wave 1s ease-in-out infinite;
+}
+
+.base:hover+.title {
+    color: var(--clr);
+    transform: rotateY(30deg) skewY(-15deg) translateY(-90px);
+    text-shadow: 0 0 3px var(--clr);
+    transition-delay: 0.1s;
+    opacity: 1;
+    animation: wave 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(60deg) rotateZ(0);
+    }
+
+    100% {
+        transform: rotateX(60deg) rotateZ(-360deg);
+    }
+
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        margin-bottom: 0;
+    }
+
+    50% {
+        margin-bottom: 12px;
+    }
+}
